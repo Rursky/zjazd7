@@ -3,7 +3,7 @@ const functions = require("./functions")
 const express = require("express");
 const path = require("path");
 const server = express();
-const port = 2000;
+const port = process.env.PORT || 3000; // skorzystaj z wolnego portu ale nie lokalnie (np na github) || jezeli nei zadziala skorzystaj z 3000
 
 server.set("view engine", "hbs");
 server.use("/assets", express.static(path.join(__dirname, "./assets")));
